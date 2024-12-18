@@ -11,7 +11,7 @@ import NovorapidImage from '/public/novorapid.webp';
 import TresibaImage from '/public/tresiva.jpeg';
 import StelaraImage from '/public/stelara.jpeg';
 import EuthyroxImage from '/public/eutirox.jpg';
-
+import Head from 'next/head';
 
 
 // New DashboardPage Component with Medical Info
@@ -41,11 +41,41 @@ export default function DashboardPage() {
     },
   ];
 
+
   return (
-    <div style={{ margin: '0', padding: '0',  fontFamily: 'Arial, sans-serif', color: '#333' }}>
+    <>
+    {/* Scripts en el Head */}
+    <Head>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.gtranslateSettings = {
+              "default_language": "en",
+              "native_language_names": true,
+              "languages": ["en", "fr", "de", "it", "es", "ar"],
+              "wrapper_selector": ".gtranslate_wrapper",
+              "switcher_horizontal_position": "right"
+            };
+          `,
+        }}
+      ></script>
+      <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    </Head>
 
-<section style={{ width: '100%', margin: '0', padding: '50px 20px', textAlign: 'center', backgroundColor: '#f9f9f9' }}>
+    {/* Contenedor del Widget */}
+    <div style={{ margin: '0', padding: '0', fontFamily: 'Arial, sans-serif', color: '#333' }}>
+      <div className="gtranslate_wrapper"></div> {/* Aquí se renderiza el widget */}
 
+    <div style={{ margin: '0', padding: '0', fontFamily: 'Arial, sans-serif', color: '#333' }}>
+      <section
+        style={{
+          width: '100%',
+          margin: '0',
+          padding: '50px 20px',
+          textAlign: 'center',
+          backgroundColor: '#f9f9f9',
+        }}
+      >
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>
           Medical Emergency Card
         </h1>
@@ -53,14 +83,12 @@ export default function DashboardPage() {
           In case of emergency, please contact:
         </div>
         <div style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-  <p>Mother: <strong>+34 684 119 287</strong></p>
-  <p>Father: <strong>+34 659 490 567</strong></p>
-  <p>Brother: <strong>+34 664 23 93 58</strong></p>
-  <p>Friend: <strong>+34 628 16 36 20 / +34 685 18 43 63</strong></p>
-</div>
-        <div style={{ fontSize: '1.5rem', margin: '30px 30px', color: '#555' }}>
-          Medical Information:
+          <p>Mother: <strong>+34 684 119 287</strong></p>
+          <p>Father: <strong>+34 659 490 567</strong></p>
+          <p>Brother: <strong>+34 664 23 93 58</strong></p>
+          <p>Friend: <strong>+34 628 16 36 20 / +34 685 18 43 63</strong></p>
         </div>
+        <div style={{ fontSize: '1.5rem', margin: '30px 30px', color: '#555' }}>Medical Information:</div>
         <div style={{ fontSize: '1.2rem', marginBottom: '10px', color: '#555' }}>
           Blood Type: <strong>O-</strong>
         </div>
@@ -90,7 +118,9 @@ export default function DashboardPage() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '250px',
+                height: 'auto',
+                wordWrap: 'break-word',
+                overflow: 'hidden',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.05)';
@@ -108,15 +138,18 @@ export default function DashboardPage() {
                   cursor: 'pointer',
                   marginBottom: '10px',
                   borderRadius: '8px',
-                  maxHeight: '120px',
+                  maxWidth: '100%',
+                  height: 'auto',
                   objectFit: 'contain',
                 }}
                 onClick={() => setSelectedImage(med.image)}
               />
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '10px', fontWeight: 'bold', color: '#222' }}>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', fontWeight: 'bold', color: '#222' }}>
                 {med.name}
               </h3>
-              <p style={{ fontSize: '1rem', color: '#666', lineHeight: '1.4' }}>{med.description}</p>
+              <p style={{ fontSize: '1rem', color: '#666', lineHeight: '1.4', margin: '0 10px' }}>
+                {med.description}
+              </p>
             </div>
           ))}
         </div>
@@ -140,11 +173,40 @@ export default function DashboardPage() {
           <img
             src={selectedImage}
             alt='Enlarged View'
-            style={{ maxWidth: '80%', maxHeight: '80%', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}
+            style={{
+              maxWidth: '80%',
+              maxHeight: '80%',
+              borderRadius: '10px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+            }}
           />
         </div>
       )}
+
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          div[style*='gridTemplateColumns'] {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 768px) {
+          div[style*='gridTemplateColumns'] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          div[style*='gridTemplateColumns'] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 375px) {
+          div[style*='gridTemplateColumns'] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
+    </div>
+    </>
   );
 }
-
