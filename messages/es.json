@@ -1,19 +1,28 @@
 {
-  "About": "Acerca de",
-  "Support": "Soporte",
-  "Other": "Otros",
-  "Theme": "Tema",
-  "An": "Un",
-  "Booster": "Impulsor",
-  "to_Your_NextJS_Apps": "para tus aplicaciones NextJS",
-  "An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications": "Una plantilla accesible, eficaz y versátil para construir aplicaciones SSR.",
-  "Use_Template": "Usar plantilla",
-  "Learn_More": "¡Aprende más!",
-  "Approachable": "Accesible",
-  "Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features": "Agrega componentes sin enviar JavaScript adicional del lado del cliente. Construido sobre las últimas características de React.",
-  "Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals": "Optimizaciones automáticas de imágenes, fuentes y scripts para mejorar la UX y los Core Web Vitals.",
-  "Versatile": "Versátil",
-  "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "Una plantilla increíblemente rica y adaptable que escala entre un pequeño sitio web de exhibición y una aplicación de tamaño completo.",
-  "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "Esta es una página simple sobre cómo mostrar cómo puedes usar la internacionalización en diferentes páginas",
-  "Performant": "Rendimiento"
+  "title": "Tarjeta de Emergencia Médica",
+  "contactInfo": "En caso de emergencia, por favor contacte:",
+  "mother": "Madre",
+  "father": "Padre",
+  "brother": "Hermano",
+  "friend": "Amigo",
+  "medicalInfo": "Información Médica:",
+  "bloodType": "Tipo de Sangre",
+  "allergies": "Alergias",
+  "none": "Ninguna",
+  "insulinNovorapid": {
+    "name": "Insulina Novorapid",
+    "description": "Insulina de acción rápida utilizada para controlar los picos de azúcar en la sangre inmediatamente después de las comidas. Se administra mediante inyección y comienza a actuar en 10-20 minutos."
+  },
+  "insulinTresiba": {
+    "name": "Insulina Tresiba",
+    "description": "Insulina de acción prolongada que proporciona una liberación constante durante hasta 42 horas, ayudando a mantener niveles estables de azúcar en la sangre durante el día y la noche."
+  },
+  "stelara": {
+    "name": "Stelara",
+    "description": "Medicamento biológico utilizado para tratar la enfermedad de Crohn y la colitis ulcerosa. Reduce la inflamación al atacar proteínas específicas del sistema inmunológico."
+  },
+  "euthyrox": {
+    "name": "Euthyrox",
+    "description": "Hormona tiroidea sintética utilizada para tratar el hipotiroidismo. Ayuda a restaurar los niveles normales de energía, metabolismo y función tiroidea."
+  }
 }
