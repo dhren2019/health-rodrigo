@@ -30,7 +30,7 @@ export default function DashboardPage() {
       image: TresibaImage.src,
     },
     {
-      name: 'Stelara',
+      name: 'Stelara (Ustekinumab)',
       description: "Biologic medication used for treating Crohn's disease and ulcerative colitis. It reduces inflammation by targeting specific proteins in the immune system.",
       image: StelaraImage.src,
     },
@@ -56,7 +56,7 @@ export default function DashboardPage() {
   <p>Mother: <strong>+34 684 119 287</strong></p>
   <p>Father: <strong>+34 659 490 567</strong></p>
   <p>Brother: <strong>+34 664 23 93 58</strong></p>
-  <p>Friend: <strong>+34 685 18 43 63</strong></p>
+  <p>Friend: <strong>+34 628 16 36 20 / +34 685 18 43 63</strong></p>
 </div>
         <div style={{ fontSize: '1.5rem', margin: '30px 30px', color: '#555' }}>
           Medical Information:

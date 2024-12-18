@@ -29,7 +29,7 @@ export const Header: FC<Props> = ({ locale }) => {
           {/* Navigation items removed as requested */}
         </nav>
         <ThemeSwitch />
-        <LangSwitcher />
+        
           
 
         
